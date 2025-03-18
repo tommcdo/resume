@@ -74,21 +74,25 @@ function Lists() {
 
 function App() {
   return (
-    <table>
-      <tr>
-        <td width="70%"><Header /></td>
-        <td width="30%"><Contact /></td>
-      </tr>
-      <tr>
-        <td>
+    <>
+      <div class="container">
+        <div class="column">
+          <Header />
+        </div>
+        <div class="column">
+          <Contact />
+        </div>
+      </div>
+      <div class="container">
+        <div class="column">
           <Experience />
-        </td>
-        <td>
+        </div>
+        <div class="column">
           <Education />
           <Lists />
-        </td>
-      </tr>
-    </table>
+        </div>
+      </div>
+    </>
   )
 }
 
