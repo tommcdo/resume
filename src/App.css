@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 0.5in;
+  margin: 0;
+  font-family: "Merriweather", serif;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+table {
+  width: 7.5in;
+  border-collapse: collapse;
+}
+
+table td {
+  vertical-align: top;
+  padding: 0.5em;
+}
+
+p.objective {
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+}
+
+p.phone, p.email {
+  font-weight: bold;
+}
+
+h2 {
+  margin: 1.2em 0 0.7em 0;
+  color: #58d;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+}
+
+h3 {
+  display: inline;
+  font-size: 14px;
+}
+
+section div {
+  margin-bottom: 1em;
+}
+
+p.location:before {
+  content: ", ";
+}
+
+p.location {
+  display: inline;
+  font-size: 13px;
+}
+
+p.title:before {
+  content: "\a0 \2014 \a0";
+}
+
+p.title {
+  display: inline;
+  font-style: italic;
+  font-size: 13px;
+}
+
+p.date {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #777;
+  font-family: "Open Sans", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  color: #666;
+}
+
+ul li {
+  margin-top: 0.4em;
+  font-size: 13px;
+}
+
+#contact {
+  padding: 1em;
+}
+
+#contact p {
+  font-size: 12px;
+}
