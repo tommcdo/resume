@@ -65,10 +65,12 @@ lists:
 
   - title: Technologies
     items:
-      - DynamoDB, EC2, S3, SQS, SNS, Lambda, CloudWatch.
-      - Docker, CircleCI, Terraform, Kubernetes.
+      - DynamoDB, S3, RDS.
+      - EC2, Lambda, ECS, EKS.
+      - Docker, Terraform, Kubernetes.
+      - CircleCI, GitHub Actions.
+      - MySQL, PostgreSQL.
       - .NET, EntityFramework, Moq, NUnit, FluentAssertions.
-      - Splunk, Grafana, InfluxDB.
       - Spring Boot, Mockito, JUnit, AssertJ.
       - Angular, React, Node.js, npm.
       - GNU/Linux, Git, Vim.
