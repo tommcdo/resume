@@ -14,7 +14,7 @@ experience:
     title: Senior Software Developer II
     date: October 2022 - Present
     highlights:
-      - Worked in .NET and Angular on AWS (ECS, EKS, S3 + CloudFront)
+      - Worked in C#/.NET and TypeScript/Angular on AWS (ECS, EKS, S3 + CloudFront)
       - Created internal tools to assist with on-call responsibilities
       - Led efforts to adopt an architecture style more suited to business and team size.
       - Mentored junior developers in best practices and coding standards.
@@ -25,7 +25,7 @@ experience:
     title: Senior Software Engineer
     date: September 2019 - October 2022
     highlights:
-      - Worked in .NET and Angular on AWS (ECS, S3 + CloudFront)
+      - Worked in C#/.NET and TypeScript/Angular on AWS (ECS, S3 + CloudFront)
       - Developed applications to service the enterprise messaging platform used across the company.
       - Built tools to help on-prem messaging tenants transition to AWS cloud.
       - Created systems and libraries to support multi-AZ failover for enterprise Kafka consumers.
@@ -70,9 +70,8 @@ lists:
       - .NET, EntityFramework, Moq, NUnit, FluentAssertions.
       - Splunk, Grafana, InfluxDB.
       - Spring Boot, Mockito, JUnit, AssertJ.
-      - SaaS, Microservices, Containers.
-      - GNU/Linux, Git, Vim.
       - Angular, React, Node.js, npm.
+      - GNU/Linux, Git, Vim.
 
   - title: Programming Languages
     items:
