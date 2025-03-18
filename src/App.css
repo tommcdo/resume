@@ -4,7 +4,7 @@
 }
 
 body {
-  padding: 0.5in;
+  padding: 2em;
   margin: 0;
   font-family: "Merriweather", serif;
 }
@@ -13,6 +13,10 @@ body {
   body {
     padding: 0 0.5in;
   }
+
+  table {
+    width: 7.5in;
+  }
 }
 
 h1 {
@@ -20,7 +24,6 @@ h1 {
 }
 
 table {
-  width: 7.5in;
   border-collapse: collapse;
 }
 
