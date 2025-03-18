@@ -9,6 +9,12 @@ body {
   font-family: "Merriweather", serif;
 }
 
+@media print {
+  body {
+    padding: 0 0.5in;
+  }
+}
+
 h1 {
   font-weight: 900;
 }
@@ -73,6 +79,18 @@ p.date {
   text-transform: uppercase;
   color: #777;
   font-family: "Open Sans", sans-serif;
+}
+
+#education p.title {
+  display: block;
+}
+
+#education p.title:before {
+  content: "";
+}
+
+#education p.location {
+  display: none;
 }
 
 ul {
