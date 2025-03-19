@@ -1,3 +1,12 @@
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -7,6 +16,10 @@ body {
   padding: 20px;
   margin: 0;
   font-family: "Merriweather", serif;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
 @media print {
@@ -67,6 +80,8 @@ body {
 }
 
 h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
   font-weight: 900;
 }
 
@@ -90,7 +105,6 @@ p.phone, p.email {
 
 h2 {
   margin: 1.2em 0 0.7em 0;
-  color: #58d;
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
@@ -127,7 +141,6 @@ p.title {
 p.date {
   font-size: 10px;
   text-transform: uppercase;
-  color: #777;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -145,7 +158,6 @@ p.date {
 
 ul {
   list-style-type: none;
-  color: #666;
 }
 
 ul li {
@@ -159,4 +171,42 @@ ul li {
 
 #contact p {
   font-size: 12px;
+}
+
+@media print, (prefers-color-scheme: light) {
+  :root {
+    color: #234;
+    background-color: #fff;
+  }
+
+  h2 {
+    color: #58d;
+  }
+
+  p.date {
+    color: #777;
+  }
+
+  ul {
+    color: #666;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #eef;
+    background-color: #222;
+  }
+
+  h2 {
+    color: #69e;
+  }
+
+  p.date {
+    color: #bbb;
+  }
+
+  ul {
+    color: #ddd;
+  }
 }
