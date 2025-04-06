@@ -5,48 +5,65 @@ contact:
   phone: (519) 567-8941
   email: tommcdo@gmail.com
 
-objective: Experienced software engineer with a passion for mentoring others and helping to improve team standards and practices.
+summary: |
+  Experienced <Senior Software Developer> with a passion for mentoring,
+  improving team standards, and driving technical excellence. Skilled in <.NET
+  (C#)>, <Angular (TypeScript)>, <AWS>, and cloud-native architectures. Strong
+  background in building internal tools, optimizing developer workflows, and
+  leading architectural improvements.
 
 experience:
 
   - company: Rocket Mortgage Canada
     location: Windsor, ON
-    title: Senior Software Developer II
-    date: October 2022 - Present
-    highlights:
-      - Worked in C#/.NET and TypeScript/Angular on AWS (ECS, EKS, S3 + CloudFront).
-      - Created internal tools to assist with on-call responsibilities.
-      - Led efforts to adopt an architecture style more suited to business and team size.
-      - Mentored junior developers in best practices and coding standards.
-      - Published libraries to improve developer experience and reduce boilerplate code.
+    positions:
+      - title: Senior Software Developer II
+        date: November 2023 - Present
+        highlights:
+          - Developed and maintained <.NET (C#)> and <Angular (TypeScript)> on <AWS (ECS, EKS, S3 + CloudFront)>.
+          - Created internal tools to enhance on-call workflows and troubleshooting efficiency.
+          - Led architecture improvements to align with business needs and team size.
+      - title: Senior Software Developer
+        date: October 2022 - November 2023
+        highlights:
+          - Mentored junior developers in <best practices>, <coding standards>, and <architectural patterns>.
+          - Published reusable <developer libraries> to improve team productivity and reduce boilerplate code.
 
   - company: Rocket Companies
     location: Detroit, MI
-    title: Senior Software Engineer
-    date: September 2019 - October 2022
-    highlights:
-      - Worked in C#/.NET and TypeScript/Angular on AWS (ECS, S3 + CloudFront).
-      - Developed applications to service the enterprise messaging platform used across the company.
-      - Built tools to help on-prem messaging tenants transition to AWS cloud.
-      - Created systems and libraries to support multi-AZ failover for enterprise Kafka consumers.
+    positions:
+      - title: Senior Software Engineer
+        date: October 2021 - October 2022
+        highlights:
+          - Designed and implemented enterprise <messaging platform applications> using <.NET (C#)>, <Angular (TypeScript)>, and <AWS (ECS, S3 + CloudFront)>.
+          - Engineered multi-AZ <failover solutions for Kafka consumers>, ensuring high availability.
+      - title: Software Engineer
+        date: September 2019 - October 2021
+        highlights:
+          - Developed tools to facilitate <on-prem to cloud migration> for messaging tenants.
+          - Built a <logging library> in <Spring Boot (Java)> to implement company logging standards, with feature-parity to existing .NET libraries.
 
   - company: Amazon
     location: Detroit, MI
-    title: Software Development Engineer II
-    date: August 2014 - July 2019
-    highlights:
-      - Worked in Java/Spring Boot on AWS (in-house infrastructure tooling over EC2).
-      - Maintained components and platforms used by teams across the organization.
-      - Built a data pipeline using DynamoDB Streams to track user preference updates in the data warehouse.
-      - Retro-fitted a legacy Perl Mason website to implement a multi-backend protocol for website rendering.
+    positions:
+      - title: Software Development Engineer II
+        date: October 2018 - July 2019
+        highlights:
+          - Built and maintained internal <platform tooling> using <Spring Boot (Java)> on <AWS (EC2)>.
+          - Retro-fitted a legacy, monolithic <Perl Mason> website to implement a modern, <multi-backend rendering protocol>.
+      - title: Software Development Engineer I
+        date: August 2014 - October 2018
+        highlights:
+          - Developed a <DynamoDB Streams-based data pipeline> to support analytics on user preferences.
 
   - company: Progressive Software
     location: Windsor, ON
-    title: Software Developer
-    date: August 2012 - August 2014
-    highlights:
-      - Worked in PHP/Kohana and jQuery UI on AWS (EC2).
-      - Integrated a front-end data table with a back-end API to allow for real-time data updates.
+    positions:
+      - title: Software Developer
+        date: August 2012 - August 2014
+        highlights:
+          - Developed web applications using <Kohana (PHP)>, <jQuery UI>, and <AWS (EC2)>.
+          - Integrated back-end <lazy loading> with front-end <data grids> for performant data access.
 
 education:
 
@@ -63,21 +80,67 @@ lists:
       - Mentoring and team leadership.
       - Written and verbal communication.
 
-  - title: Technologies
-    items:
-      - DynamoDB, S3, RDS.
-      - EC2, Lambda, ECS, EKS.
-      - Docker, Terraform, Kubernetes.
-      - CircleCI, GitHub Actions.
-      - MySQL, PostgreSQL.
-      - .NET, EntityFramework, Moq, NUnit, FluentAssertions.
-      - Spring Boot, Mockito, JUnit, AssertJ.
-      - Angular, React, Node.js, npm.
-      - GNU/Linux, Git, Vim.
+technicalskills:
 
   - title: Programming Languages
     items:
-      - C#, Java, PHP.
-      - JavaScript, TypeScript, CSS, HTML.
-      - Python, Perl, Shell.
-      - XML, JSON, YAML.
+      - C#
+      - Java
+      - PHP
+      - JavaScript
+      - TypeScript
+      - Python
+      - Perl
+      - Shell
+      - HTML
+      - CSS
+
+  - title: AWS
+    items:
+      - ECS (Elastic Container Service)
+      - EKS (Elastic Kubernetes Service)
+      - Lambda
+      - S3
+      - RDS
+      - EC2
+
+  - title: Cloud & Infrastructure
+    items:
+      - Docker
+      - Terraform
+      - Kubernetes
+
+  - title: Databases
+    items:
+      - DynamoDB
+      - PostgreSQL
+      - MySQL
+      - Redis
+
+  - title: Markup Languages
+    items:
+      - JSON
+      - YAML
+      - XML
+
+  - title: Development Tools & Frameworks
+    items:
+      - .NET
+      - Entity Framework
+      - Moq
+      - NUnit
+      - FluentAssertions
+      - Spring Boot
+      - Mockito
+      - JUnit
+      - AssertJ
+      - Angular
+      - React
+      - Node.js
+      - npm
+
+  - title: Operating Systems
+    items:
+      - GNU/Linux
+      - macOS
+      - Windows

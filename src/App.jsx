@@ -2,12 +2,25 @@ import { useState } from 'react'
 import './App.css'
 import data from './data.yaml';
 
+function Render({ content }) {
+  return (
+    <>
+      {content.split(/[<>]/).map((part, index) => {
+        if (index % 2 === 0) {
+          return part;
+        } else {
+          return (<strong>{part}</strong>);
+        }
+      })}
+    </>
+  );
+}
 
-function Header() {
+function Summary() {
   return (
     <section id="header">
-      <h1>{data.name}</h1>
-      <p class="objective">{data.objective}</p>
+      <h1>Professional Summary</h1>
+      <p class="objective"><Render content={data.summary} /></p>
     </section>
   );
 }
@@ -15,9 +28,10 @@ function Header() {
 function Contact() {
   return (
     <section id="contact">
+      <p class="name"><strong>{data.name}</strong></p>
+      <p class="city">{data.contact.city}</p>
       <p class="phone">{data.contact.phone}</p>
       <p class="email">{data.contact.email}</p>
-      <p class="city">{data.contact.city}</p>
     </section>
   );
 }
@@ -25,20 +39,26 @@ function Contact() {
 function Experience() {
   return (
     <section id="experience">
-      <h2>Experience</h2>
-      {data.experience.map((item, jobIndex) => (
-        <div key={jobIndex}>
-          <h3>{item.company}</h3>
-          <p class="location">{item.location}</p>
-          <p class="title">{item.title}</p>
-          <p class="date">{item.date}</p>
-          <ul>
-            {item.highlights.map((highlight, highlightIndex) => (
-              <li key={highlightIndex}>{highlight}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      <h1>Experience</h1>
+      {data.experience.map((job, jobIndex) =>
+        job.positions.map((position, positionIndex) => (
+          <div class="experience">
+            <div class="employer" key={jobIndex}>
+              <div class="heading">
+                <h2>{job.company} <span class="location">({job.location})</span></h2>
+              </div>
+              <div class="position" key={positionIndex}>
+                <h3>{position.title}, <span class="date">{position.date}</span></h3>
+                <ul>
+                  {position.highlights.map((highlight, highlightIndex) => (
+                    <li key={highlightIndex}><Render content={highlight} /></li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))
+      )}
     </section>
   )
 }
@@ -46,52 +66,47 @@ function Experience() {
 function Education() {
   return (
     <section id="education">
-      <h2>Education</h2>
+      <h1>Education</h1>
       {data.education.map((item, schoolIndex) => (
-        <div key={schoolIndex}>
-          <h3>{item.school}</h3>
-          <p class="location">{item.location}</p>
-          <p class="title">{item.title}</p>
-          <p class="date">{item.date}</p>
+        <div class="institution" key={schoolIndex}>
+          <div class="heading">
+            <h2>{item.school} <span class="location">({item.location})</span></h2>
+          </div>
+          <div class="position" key={schoolIndex}>
+            <h3>{item.title}, <span class="date">{item.date}</span></h3>
+          </div>
         </div>
       ))}
     </section>
   );
 }
 
-function Lists() {
-  return data.lists.map((list, listIndex) => (
-    <section class="list" key={listIndex}>
-      <h2>{list.title}</h2>
+function TechSkills() {
+  return (
+    <section id="techskills">
+      <h1>Technical Skills</h1>
       <ul>
-        {list.items.map((item, itemIndex) => (
-          <li key={itemIndex}>{item}</li>
+        {data.technicalskills.map((list, listIndex) => (
+          <li>
+            <strong>{list.title}: </strong>
+            {list.items.map((item, itemIndex) => (
+              <>{itemIndex > 0 && ", "}<Render content={item} /></>
+            ))}
+          </li>
         ))}
       </ul>
     </section>
-  ));
+  );
 }
 
 function App() {
   return (
     <>
-      <div class="container">
-        <div class="column">
-          <Header />
-        </div>
-        <div class="column">
-          <Contact />
-        </div>
-      </div>
-      <div class="container">
-        <div class="column">
-          <Experience />
-        </div>
-        <div class="column">
-          <Education />
-          <Lists />
-        </div>
-      </div>
+      <Contact />
+      <Summary />
+      <TechSkills />
+      <Experience />
+      <Education />
     </>
   )
 }

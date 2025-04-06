@@ -1,212 +1,119 @@
-:root {
-  line-height: 1.5;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
+  font-size: 14pt;
+  font-family: "Merriweather", serif;
 }
 
-body {
-  padding: 20px;
-  margin: 0;
-  font-family: "Merriweather", serif;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+@media screen and (prefers-color-scheme: light) {
+  body {
+    background-color: #fffffa;
+    color: #222;
+
+    max-width: 8.5in;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background-color: #222;
+    color: #ffe;
+  }
 }
 
 @media print {
   body {
-    padding: 0 0.5in;
-  }
-
-  table {
-    width: 7.5in;
-  }
-}
-
-.column {
-  padding: 10px;
-}
-
-@media print, screen and (min-width: 1024px) {
-  .container {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .column:nth-child(1) {
-    min-width: 728px;
-  }
-
-  .column:nth-child(2) {
-    min-width: 216px;
+    background-color: #fff;
+    color: #000;
   }
 }
 
 @media print {
-  .column:nth-child(1) {
-    width: 5.25in;
+  @page {
+    padding: 0.5in 0;
   }
+  body: {
+    margin: 0;
+    padding: 0;
+  }
+  * {
+    font-size: 10pt;
+  }
+}
 
-  .column:nth-child(2) {
-    width: 2.25in;
-  }
+body {
+  padding: 2em 5em;
+  font-family: sans-serif;
+}
+
+h1, h2, h3 {
+  margin: 1em 0 0.5em 0;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  font-weight: 900;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-table td {
-  vertical-align: top;
-  padding: 0.5em;
-}
-
-p.objective {
-  font-size: 12px;
-  font-family: "Open Sans", sans-serif;
-}
-
-p.phone, p.email {
-  font-weight: bold;
+  font-size: 1.8em;
+  margin-left: -1em;
 }
 
 h2 {
-  margin: 1.2em 0 0.7em 0;
-  text-transform: uppercase;
-  font-family: "Open Sans", sans-serif;
-  font-size: 12px;
+  font-size: 1.4em;
 }
 
 h3 {
-  display: inline;
-  font-size: 14px;
-}
-
-section div {
-  margin-bottom: 1em;
-}
-
-p.location:before {
-  content: ", ";
-}
-
-p.location {
-  display: inline;
-  font-size: 13px;
-}
-
-p.title:before {
-  content: "\a0 \2014 \a0";
-}
-
-p.title {
-  display: inline;
-  font-style: italic;
-  font-size: 13px;
-}
-
-p.date {
-  font-size: 10px;
-  text-transform: uppercase;
-  font-family: "Open Sans", sans-serif;
-}
-
-#education p.title {
-  display: block;
-}
-
-#education p.title:before {
-  content: "";
-}
-
-#education p.location {
-  display: none;
+  font-size: 1.2em;
 }
 
 ul {
-  list-style-type: none;
+  margin-top: 0.8em;
+  padding-left: 1em;
+
+  li {
+    line-height: 1.5em;
+    padding-bottom: 0.7em;
+  }
+
 }
 
-ul li {
-  margin-top: 0.4em;
-  font-size: 13px;
+p {
+  line-height: 1.5em;
+}
+
+p, li {
+  font-size: 1em;
+}
+
+.employer {
+  .heading {
+    break-inside: avoid;
+    break-after: avoid;
+  }
+    
+  .position {
+    break-inside: avoid;
+  }
+}
+
+.date {
+  font-size: 1em;
+  font-style: italic;
+}
+
+.location {
+  font-weight: 400;
+}
+
+
+.position {
+  .date {
+    font-size: 0.8em;
+    font-weight: 400;
+  }
 }
 
 #contact {
-  padding: 1em;
+  margin: 1em 0;
 }
 
-#contact p {
-  font-size: 12px;
-}
-
-@media print, (prefers-color-scheme: light) {
-  :root {
-    color: #234;
-    background-color: #fff;
-  }
-
-  h2 {
-    color: #58d;
-  }
-
-  p.date {
-    color: #777;
-  }
-
-  ul {
-    color: #666;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #eef;
-    background-color: #222;
-  }
-
-  h2 {
-    color: #69e;
-  }
-
-  p.date {
-    color: #bbb;
-  }
-
-  ul {
-    color: #ddd;
-  }
+#techskills {
 }
