@@ -36,6 +36,28 @@ function Contact() {
   );
 }
 
+function Title({ title, subtitle, type }) {
+  return (
+    <>
+      <span class="title">{title}</span>
+      <span class="emdash"> &mdash; </span>
+      <span class={type}>{subtitle}</span>
+    </>
+  );
+}
+
+function Institution({ name, city }) {
+  return (
+    <h2><Title title={name} subtitle={city} type="location" /></h2>
+  );
+}
+
+function Credential({ title, date }) {
+  return (
+    <h3><Title title={title} subtitle={date} type="date" /></h3>
+  );
+}
+
 function Experience() {
   return (
     <section id="experience">
@@ -45,10 +67,10 @@ function Experience() {
           <div class="experience">
             <div class="employer" key={jobIndex}>
               <div class="heading">
-                <h2>{job.company} <span class="location">({job.location})</span></h2>
+                <Institution name={job.company} city={job.location} />
               </div>
               <div class="position" key={positionIndex}>
-                <h3>{position.title}, <span class="date">{position.date}</span></h3>
+                <Credential title={position.title} date={position.date} />
                 <ul>
                   {position.highlights.map((highlight, highlightIndex) => (
                     <li key={highlightIndex}><Render content={highlight} /></li>
@@ -70,10 +92,10 @@ function Education() {
       {data.education.map((item, schoolIndex) => (
         <div class="institution" key={schoolIndex}>
           <div class="heading">
-            <h2>{item.school} <span class="location">({item.location})</span></h2>
+            <h2><span class="title">{item.school}</span>&nbsp;<span class="location">{item.location}</span></h2>
           </div>
           <div class="position" key={schoolIndex}>
-            <h3>{item.title}, <span class="date">{item.date}</span></h3>
+            <h3><span class="title">{item.title}</span>&nbsp;<span class="date">{item.date}</span></h3>
           </div>
         </div>
       ))}
