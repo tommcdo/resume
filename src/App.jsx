@@ -1,5 +1,7 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import './typeface.css';
+import './colors.css';
 import data from './data.yaml';
 
 function Render({ content }) {
@@ -9,7 +11,7 @@ function Render({ content }) {
         if (index % 2 === 0) {
           return part;
         } else {
-          return (<strong>{part}</strong>);
+          return <strong>{part}</strong>;
         }
       })}
     </>
@@ -36,12 +38,23 @@ function Contact() {
   );
 }
 
+function When({ condition, children }) {
+  if (condition) {
+    return <>{children}</>;
+  } else {
+    return <></>;
+  }
+}
+
 function Title({ title, subtitle, type }) {
   return (
     <>
       <span class="title">{title}</span>
-      <span class="emdash"> &mdash; </span>
-      <span class={type}>{subtitle}</span>
+      <When condition={subtitle}>
+        &nbsp;
+        <span class="emdash">&mdash; </span>
+        <span class={type}>{subtitle}</span>
+      </When>
     </>
   );
 }
@@ -92,10 +105,10 @@ function Education() {
       {data.education.map((item, schoolIndex) => (
         <div class="institution" key={schoolIndex}>
           <div class="heading">
-            <h2><span class="title">{item.school}</span>&nbsp;<span class="location">{item.location}</span></h2>
+            <Institution name={item.school} city={item.location} />
           </div>
-          <div class="position" key={schoolIndex}>
-            <h3><span class="title">{item.title}</span>&nbsp;<span class="date">{item.date}</span></h3>
+          <div class="position no-date" key={schoolIndex}>
+            <Credential title={item.title} />
           </div>
         </div>
       ))}
@@ -121,14 +134,28 @@ function TechSkills() {
   );
 }
 
+function CssToggle({ children }) {
+  const [isStyled, toggleStyle] = useState(true);
+  return (
+    <>
+      {/*<a id="toggle-btn" onClick={(event) => toggleStyle(!isStyled)}>CSS: {isStyled ? 'ON' : 'OFF'}</a>*/}
+      <div id="resume" {...(isStyled && { class: 'styled' })}>
+        {children}
+      </div>
+    </>
+  );
+}
+
 function App() {
   return (
     <>
-      <Contact />
-      <Summary />
-      <TechSkills />
-      <Experience />
-      <Education />
+      <CssToggle>
+        <Contact />
+        <Summary />
+        <TechSkills />
+        <Experience />
+        <Education />
+      </CssToggle>
     </>
   )
 }

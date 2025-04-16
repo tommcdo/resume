@@ -1,156 +1,107 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Merriweather", serif;
 }
 
-html {
-  font-size: 14pt;
-}
-
-@media screen and (prefers-color-scheme: light) {
-  body {
-    background-color: #fffffa;
-    color: #222;
-
-    max-width: 8.5in;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (prefers-color-scheme: dark) {
-  body {
-    background-color: #222;
-    color: #ffe;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  html {
-    font-size: 10pt;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  html {
-    font-size: 14pt;
-  }
+#toggle-btn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 0.25em;
+  padding: 0.25em;
+  border: 1px dotted #222;
+  cursor: pointer;
 }
 
 @media print {
+  #toggle-btn {
+    display: none;
+  }
+}
+
+@media screen {
   body {
-    background-color: #fff;
-    color: #000;
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding-bottom: 1em;
   }
 }
 
 @media print {
   @page {
-    padding: 0.5in 0;
+    padding: 0.5in;
   }
   body: {
     margin: 0;
     padding: 0;
   }
-  html {
-    font-size: 10pt;
+  .employer {
+    .heading {
+      break-inside: avoid;
+      break-after: avoid;
+    }
+      
+    .position {
+      break-inside: avoid;
+    }
   }
 }
 
-body {
-  padding: 2em 5em;
-  font-family: sans-serif;
-}
-
-h1, h2, h3 {
+h1, h2 {
   margin: 1em 0 0.5em 0;
 }
 
-h1 {
-  font-size: 1.8rem;
-  margin-left: -1em;
-}
-
-h2 {
-  font-size: 1.4rem;
-}
-
 h3 {
-  font-size: 1.2rem;
+  margin-top: 0;
 }
 
 ul {
   margin-top: 0.8em;
-  padding-left: 1em;
+  padding-left: 1.5em;
 
   li {
-    line-height: 1.5em;
     padding-bottom: 0.7em;
   }
 
-}
-
-p {
-  line-height: 1.5em;
-}
-
-p, li {
-  font-size: 1rem;
-}
-
-.employer {
-  .heading {
-    break-inside: avoid;
-    break-after: avoid;
-  }
-    
-  .position {
-    break-inside: avoid;
-  }
-}
-
-.date {
-  font-weight: 400;
-  font-size: 1rem;
-  font-style: italic;
-}
-
-.location {
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-
-.emdash {
-  display: none;
-}
-
-@media screen and (max-width: 1024px) {
-  .date, .location {
-    display: block;
-  }
-}
-
-@media print, screen and (min-width: 1025px) {
-  h3 span.title {
-    &::after {
-      content: ", "
-    }
-  }
-
-  h2 span.location {
-    &::before {
-      content: " (";
-    }
-    &::after {
-      content: ")"
-    }
-  }
 }
 
 #contact {
   margin: 1em 0;
 }
 
-#techskills {
+#resume.styled {
+  .emdash {
+    display: none;
+  }
+
+  .date, .location {
+    display: block;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  #resume.styled {
+    .date, .location {
+      display: inline;
+    }
+
+    .position {
+      &:not(.no-date) {
+        h3 .title {
+          &::after {
+            content: ", "
+          }
+        }
+      }
+    }
+
+    h2 .location {
+      &::before {
+        content: " (";
+      }
+      &::after {
+        content: ")"
+      }
+    }
+  }
 }

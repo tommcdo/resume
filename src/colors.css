@@ -1,0 +1,23 @@
+@media screen and (prefers-color-scheme: light) {
+  body {
+    background-color: #fffffa;
+    color: #222;
+
+    max-width: 8.5in;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background-color: #222;
+    color: #ffe;
+  }
+}
+
+@media print {
+  body {
+    background-color: #fff;
+    color: #000;
+  }
+}

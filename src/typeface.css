@@ -1,0 +1,53 @@
+html {
+  font-size: 115%;
+}
+
+@media print {
+  html {
+    font-size: 85%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+#resume.styled {
+  font-family: Georgia, serif;
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  p, li {
+    font-size: 1rem;
+    line-height: 1.5em;
+  }
+
+  .date {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .location {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
